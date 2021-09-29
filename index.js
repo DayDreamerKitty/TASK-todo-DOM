@@ -3,11 +3,11 @@ const CATEGORY_SELECTOR = "categories-list";
 const CATEGORY_FILTER = "categories-list-filter";
 
 let tasks = [];
-let categories = [];
+
 
 // REMOVE ME: SAMPLE FILLING
 
-categories = ["Movies", "Groceries"];
+let categories = ["movies", "grocires"];
 // SAMPLE
 renderCategories(categories, CATEGORY_SELECTOR);
 renderCategories(categories, CATEGORY_FILTER);
@@ -16,7 +16,13 @@ renderTasks(tasks, "tasks-list");
 function taskChecked(taskId, checked) {
   // implement the delete task.
   // You are given the task id
+
   console.log(`${checked ? "" : "UN"}CHECKED TASK`, taskId);
+  renderTasks(tasks, "tasks-list");
+}
+function deletTask(){
+  console.log(" ");
+
 }
 
 function addTask() {
@@ -34,7 +40,13 @@ function addTask() {
 }
 
 function addCategory() {
+  const selectedCategory = getSelectedCategoryById(CATEGORY_SELECTOR);
   const newCategory = getNewCategoryText();
+  
+  
+  categories.push(getNewCategoryText())
+  renderCategories(categories, CATEGORY_SELECTOR);
+  renderCategories(categories, CATEGORY_FILTER);
   // continue the code here
   alert(`New category was added: ${newCategory}`);
 }
