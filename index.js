@@ -44,7 +44,7 @@ function addCategory() {
   renderCategories(categories, CATEGORY_SELECTOR);
   renderCategories(categories, CATEGORY_FILTER);
   // continue the code here
-  alert(`New category was added: ${newCategory}`);
+  
 }
 
 function filterTasks() {
